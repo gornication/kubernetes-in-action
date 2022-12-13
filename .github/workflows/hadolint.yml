@@ -7,13 +7,12 @@ on:
     branches: [ "main" ]
 
 jobs:
-  linter:
+  node-docker:
     runs-on: ubuntu-latest
+    container:
+      image: hadolint/hadolint
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@v2
-      - name: Run the build process with Docker
-        uses: addnab/docker-run-action@v3
-        with:
-            image: hadolint/hadolint:latest
-            options: -v ${{ github.workspace }}:/var/www
+         - name: Log the node version
+           run: |
+             node -v
+             cat /etc/os-release
