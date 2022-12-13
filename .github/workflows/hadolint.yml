@@ -1,0 +1,17 @@
+name: Hadolint
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  compile:
+   name: compile assets
+   runs-on: ubuntu-latest
+   steps:
+     - name: Check out repo
+       uses: actions/checkout@v3
+     - name: Run docker conteiner
+       uses: docker://hadolint/hadolint:latest
