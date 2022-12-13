@@ -12,6 +12,8 @@ jobs:
     container:
       image: hadolint/hadolint:latest
     steps:
-         - name: Linter
-           run: |
-             hadolint Dockerfile
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Linter
+        run: |
+          hadolint Dockerfile
