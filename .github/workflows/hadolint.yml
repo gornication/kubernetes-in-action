@@ -10,9 +10,8 @@ jobs:
   node-docker:
     runs-on: ubuntu-latest
     container:
-      image: docker://hadolint/hadolint
+      image: hadolint/hadolint:latest
     steps:
-         - name: Log the node version
+         - name: Linter
            run: |
-             node -v
-             cat /etc/os-release
+             hadolint Dockerfile
