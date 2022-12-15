@@ -10,7 +10,7 @@ jobs:
   node-docker:
     runs-on: ubuntu-latest
     container:
-      image: hadolint/hadolint:v2.12.1-beta-debian
+      image: hadolint/hadolint:latest-debian
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
