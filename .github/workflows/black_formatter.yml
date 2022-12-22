@@ -7,9 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: psf/black@stable
-        with:
-          options: "--check --verbose"
-          src: "./src"
-          jupyter: true
-          version: "21.5b1"
+      - uses: psf/black@21.8b0
